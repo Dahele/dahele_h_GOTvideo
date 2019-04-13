@@ -23,6 +23,7 @@
 	];
 
 	function showLightbox() {
+		setTimeout(() => { 
 		// grab the right video source
 		
 		//get lowercase house name from the class list
@@ -39,17 +40,19 @@
 		
 		video.src = `video/House-${targetSrc}.mp4`;
 
-
 		lightBox.classList.add('show-lightbox');
+		}, 1500);
 
 		video.load();
 		video.play();
+		
 	}
 
 	function hideLightbox() {
 		lightBox.classList.remove('show-lightbox');
 		// rewind the video to the begining
 		// and also pause it
+		
 		video.currentTime = 0;
 		video.pause();
 	}
